@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaş və Məktəb</title>
+    <link rel="icon" type="image/png" href="Logo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #6dd5fa, #2980b9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        #mekteb {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffeaa7;
+            margin-top: 15px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            background: #f39c12;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Yaş və Məktəb Sistemi</h1>
+        <p id="mekteb"></p>
+        <button onclick="reloadPage()">Yenidən Daxil Et</button>
+    </div>
+
+    <script>
+        let yas = prompt('Yaşınızı daxil edin:');
+        let netice = document.getElementById('mekteb');
+
+        if (yas > 65) {
+            netice.innerHTML = '👴 Siz qocalmısız pensiya alan vaxdıvızdı çöldə nərd vurmaq vaxıdı';
+        } else if (yas > 45) {
+            netice.innerHTML = '💼 Siz artıq az işləməlisiniz.';
+        } else if (yas > 25) {
+            netice.innerHTML = '⚒️ Sizin işləmək vaxtınız gəldi.';
+        } else if (yas > 17) {
+            netice.innerHTML = '🎓 Siz universitetə gedirsiniz.';
+        } else if (yas > 7) {
+            netice.innerHTML = '📚 Siz məktəbə getməlisiniz.';
+        } else {
+            netice.innerHTML = '👶 Siz hələ bağçadasınız.';
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
